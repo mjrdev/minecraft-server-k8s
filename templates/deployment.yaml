@@ -4,29 +4,31 @@ metadata:
   name: minecraft-{{ .Values.client.name }}
   labels:
     app: minecraft-server
-    client: {{ .Values.client.name }}
+    client: { { .Values.client.name } }
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: minecraft-server
-      client: {{ .Values.client.name }}
+      client: { { .Values.client.name } }
   template:
     metadata:
       labels:
         app: minecraft-server
-        client: {{ .Values.client.name }}
+        client: { { .Values.client.name } }
     spec:
       containers:
         - name: minecraft-server
-          image: {{ .Values.image }}
+          image: { { .Values.image } }
           args:
             - "-text=Hello from {{ .Values.client.name }}"
+          env:
+            - name: EULA
+              value: "TRUE"
           ports:
-            - containerPort: 5678
+            - containerPort: 25565
           readinessProbe:
-            httpGet:
-              path: /
-              port: 5678
+            tcpSocket:
+              port: 25565
             initialDelaySeconds: 2
             periodSeconds: 5
