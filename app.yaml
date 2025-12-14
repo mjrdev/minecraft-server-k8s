@@ -13,7 +13,7 @@ spec:
     metadata:
       name: minecraft-{{client}}
     spec:
-      project: minecraft
+      project: default
       source:
         repoURL: https://github.com/mjrdev/minecraft-server-k8s
         targetRevision: main

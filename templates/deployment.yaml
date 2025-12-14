@@ -23,10 +23,17 @@ spec:
           env:
             - name: EULA
               value: "TRUE"
+          resources:
+            requests:
+              memory: "512Mi"
+              cpu: "250m"
+            limits:
+              memory: "1Gi"
+              cpu: "500m"
           ports:
             - containerPort: 25565
           readinessProbe:
             tcpSocket:
               port: 25565
-            initialDelaySeconds: 2
+            initialDelaySeconds: 15
             periodSeconds: 5
