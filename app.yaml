@@ -13,7 +13,7 @@ spec:
     metadata:
       name: minecraft-{{client}}
     spec:
-      project: default
+      project: minecraft
       source:
         repoURL: https://github.com/mjrdev/minecraft-server-k8s
         targetRevision: main
@@ -24,7 +24,7 @@ spec:
               name: {{client}}
       destination:
         server: https://kubernetes.default.svc
-        namespace: default
+        namespace: minecraft
       syncPolicy:
         automated:
           prune: true
