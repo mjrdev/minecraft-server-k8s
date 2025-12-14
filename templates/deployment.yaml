@@ -20,11 +20,6 @@ spec:
       containers:
         - name: minecraft-server
           image: { { .Values.image } }
-          args:
-            - "-text=Hello from {{ .Values.client.name }}"
-          env:
-            - name: EULA
-              value: "TRUE"
           ports:
             - containerPort: 25565
           readinessProbe:
