@@ -25,15 +25,15 @@ spec:
               value: "TRUE"
           resources:
             requests:
-              memory: "512Mi"
-              cpu: "250m"
+              memory: "256Mi"
+              cpu: "100m"
             limits:
-              memory: "1Gi"
-              cpu: "500m"
+              memory: "2Gi"
+              cpu: "2"
           ports:
             - containerPort: 25565
           readinessProbe:
             tcpSocket:
               port: 25565
-            initialDelaySeconds: 15
+            initialDelaySeconds: 115
             periodSeconds: 5
