@@ -20,6 +20,9 @@ spec:
       containers:
         - name: minecraft-server
           image: {{ .Values.image }}
+          env:
+            - name: EULA
+              value: "TRUE"
           ports:
             - containerPort: 25565
           readinessProbe:
