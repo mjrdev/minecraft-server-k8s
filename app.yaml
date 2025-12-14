@@ -22,6 +22,7 @@ spec:
           values: |
             client:
               name: {{client}}
+              port: {{ .Values.client.port }}
       destination:
         server: https://kubernetes.default.svc
         namespace: minecraft
