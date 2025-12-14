@@ -1,37 +1,30 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: minecraft-server
+  name: minecraft-{{ .Values.client.name }}
   labels:
     app: minecraft-server
-    client: default
+    client: {{ .Values.client.name }}
 spec:
-  replicas: 6
+  replicas: 1
   selector:
     matchLabels:
       app: minecraft-server
-      client: default
+      client: {{ .Values.client.name }}
   template:
     metadata:
       labels:
         app: minecraft-server
-        client: default
+        client: {{ .Values.client.name }}
     spec:
       containers:
-      - name: minecraft-server
-        image: hashicorp/http-echo
-        resources:
-          requests:
-            cpu: 100m
-            memory: 128Mi
-          limits:
-            cpu: 200m
-            memory: 256Mi
-        args:
-        - "-text=Hello World from ArgoCD!"
-        ports:
-        - containerPort: 5678
-        readinessProbe:
+        - name: minecraft-server
+          image: {{ .Values.image }}
+          args:
+            - "-text=Hello from {{ .Values.client.name }}"
+          ports:
+            - containerPort: 5678
+          readinessProbe:
             httpGet:
               path: /
               port: 5678
