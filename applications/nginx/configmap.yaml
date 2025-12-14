@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-stream-conf
+  namespace: minecraft
+data:
+  nginx.conf: |
+    worker_processes auto;
+
+    events {
+      worker_connections 1024;
+    }
+
+    stream {
+      upstream cliente_a {
+        server minecraft-cliente-a.minecraft.svc.cluster.local:25565;
+      }
+
+      upstream cliente_b {
+        server minecraft-cliente-b.minecraft.svc.cluster.local:25565;
+      }
+
+      server {
+        listen 43452;
+        proxy_pass cliente_a;
+      }
+
+      server {
+        listen 43453;
+        proxy_pass cliente_b;
+      }
+    }

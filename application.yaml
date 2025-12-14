@@ -8,9 +8,9 @@ spec:
     - list:
         elements:
           - client: cliente-945b3565-manoel
-            port: 43452
+            port: "43452"
           - client: cliente-23435678-raimundo
-            port: 43453
+            port: "43453"
   template:
     metadata:
       name: minecraft-{{client}}
