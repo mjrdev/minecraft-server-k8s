@@ -1,0 +1,31 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: minecraft-server
+  namespace: argocd
+spec:
+  generators:
+    - list:
+        elements:
+          - client: cliente-a
+          - client: cliente-b
+  template:
+    metadata:
+      name: minecraft-{{client}}
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/mjr-dev/cluster-argocd-k8s
+        targetRevision: main
+        path: .
+        helm:
+          values: |
+            client:
+              name: {{client}}
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: default
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true

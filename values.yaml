@@ -1,0 +1,3 @@
+image: minha-imagem:1.0
+client:
+  name: default
