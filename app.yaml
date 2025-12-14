@@ -8,7 +8,9 @@ spec:
     - list:
         elements:
           - client: cliente-945b3565-manoel
+            port: 43452
           - client: cliente-23435678-raimundo
+            port: 43453
   template:
     metadata:
       name: minecraft-{{client}}
@@ -22,7 +24,6 @@ spec:
           values: |
             client:
               name: {{client}}
-              port: {{ .Values.client.port }}
       destination:
         server: https://kubernetes.default.svc
         namespace: minecraft
