@@ -7,8 +7,8 @@ spec:
   generators:
     - list:
         elements:
-          - client: cliente-a
-          - client: cliente-b
+          - client: cliente-945b3565-manoel
+          - client: cliente-23435678-raimundo
   template:
     metadata:
       name: minecraft-{{client}}
