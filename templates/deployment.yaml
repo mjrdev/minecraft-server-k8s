@@ -4,22 +4,22 @@ metadata:
   name: minecraft-{{ .Values.client.name }}
   labels:
     app: minecraft-server
-    client: { { .Values.client.name } }
+    client: {{ .Values.client.name }}
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: minecraft-server
-      client: { { .Values.client.name } }
+      client: {{ .Values.client.name }}
   template:
     metadata:
       labels:
         app: minecraft-server
-        client: { { .Values.client.name } }
+        client: {{ .Values.client.name }}
     spec:
       containers:
         - name: minecraft-server
-          image: { { .Values.image } }
+          image: {{ .Values.image }}
           ports:
             - containerPort: 25565
           readinessProbe:
