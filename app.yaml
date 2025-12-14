@@ -9,6 +9,7 @@ spec:
         elements:
           - client: cliente-945b3565-manoel
           - client: cliente-23435678-raimundo
+          - client: cliente-23231236-cristina
   template:
     metadata:
       name: minecraft-{{client}}
