@@ -1,0 +1,5 @@
+clients:
+  - name: cliente-945b3565-manoel
+    port: 43452
+  - name: cliente-23435678-raimundo
+    port: 43453

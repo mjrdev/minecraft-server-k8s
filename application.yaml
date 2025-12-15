@@ -5,12 +5,11 @@ metadata:
   namespace: argocd
 spec:
   generators:
-    - list:
-        elements:
-          - client: cliente-945b3565-manoel
-            port: "43452"
-          - client: cliente-23435678-raimundo
-            port: "43453"
+    - git:
+        repoURL: https://github.com/mjrdev/minecraft-server-k8s
+        revision: main
+        files:
+          - path: apps/clients.yaml
   template:
     metadata:
       name: minecraft-{{client}}
