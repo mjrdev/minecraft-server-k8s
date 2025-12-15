@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: minecraft-{{ .Values.client.name }}
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   ports:
     - port: {{ .Values.client.port }}
       targetPort: 25565
