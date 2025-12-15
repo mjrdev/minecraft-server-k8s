@@ -9,7 +9,9 @@ spec:
     repoURL: https://github.com/mjrdev/minecraft-server-k8s
     targetRevision: main
     path: nginx
-    helm: {}
+    helm:
+      valueFiles:
+        - values.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: minecraft
