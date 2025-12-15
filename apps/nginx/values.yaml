@@ -1,7 +1,3 @@
 clients:
   - name: cliente-945b3565-manoel
     port: 30500
-  - name: cliente-23435678-raimundo
-    port: 30501
-  - name: cliente-23433243-roberto
-    port: 30502
