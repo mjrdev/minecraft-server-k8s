@@ -18,7 +18,7 @@ spec:
       source:
         repoURL: https://github.com/mjrdev/minecraft-server-k8s
         targetRevision: main
-        path: .
+        path: apps/minecraft
         helm:
           values: |
             client:
