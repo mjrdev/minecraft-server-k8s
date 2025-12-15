@@ -2,3 +2,8 @@ image: itzg/minecraft-server:stable-java21-alpine
 client:
   name: default
   port: 43452
+clients:
+  - client: cliente-945b3565-manoel
+    port: "43452"
+  - client: cliente-23435678-raimundo
+    port: "43453"

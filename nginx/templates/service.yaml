@@ -8,11 +8,11 @@ spec:
   selector:
     app: nginx-tcp
   ports:
-    - name: cliente-a
+    - name: cliente-945b3565-manoel
       port: 43452
       targetPort: 43452
       protocol: TCP
-    - name: cliente-b
+    - name: cliente-23435678-raimundo
       port: 43453
       targetPort: 43453
       protocol: TCP
