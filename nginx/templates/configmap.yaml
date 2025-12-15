@@ -12,21 +12,24 @@ data:
     }
 
     stream {
-      upstream cliente_a {
-        server minecraft-cliente-a.minecraft.svc.cluster.local:25565;
+      # ESSENCIAL em Kubernetes
+      resolver kube-dns.kube-system.svc.cluster.local valid=10s;
+
+      upstream cliente_945b3565_manoel {
+        server minecraft-cliente-945b3565-manoel.minecraft.svc.cluster.local:25565;
       }
 
-      upstream cliente_b {
-        server minecraft-cliente-b.minecraft.svc.cluster.local:25565;
+      upstream cliente_23435678_raimundo {
+        server minecraft-cliente-23435678-raimundo.minecraft.svc.cluster.local:25565;
       }
 
       server {
         listen 43452;
-        proxy_pass cliente_a;
+        proxy_pass cliente_945b3565_manoel;
       }
 
       server {
         listen 43453;
-        proxy_pass cliente_b;
+        proxy_pass cliente_23435678_raimundo;
       }
     }
