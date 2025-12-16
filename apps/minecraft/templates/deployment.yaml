@@ -25,10 +25,10 @@ spec:
               value: "TRUE"
           resources:
             requests:
-              memory: "256Mi"
-              cpu: "100m"
+              memory: "512Mi"
+              cpu: "200m"
             limits:
-              memory: "2Gi"
+              memory: "3Gi"
               cpu: "2"
           ports:
             - containerPort: 25565
