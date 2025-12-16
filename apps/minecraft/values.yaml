@@ -1,1 +1,1 @@
-image: marctv/minecraft-papermc-server:latest
+image: itzg/minecraft-server:stable-java21-alpine
