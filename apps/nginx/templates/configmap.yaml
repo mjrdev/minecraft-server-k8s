@@ -14,13 +14,13 @@ data:
       resolver kube-dns.kube-system.svc.cluster.local valid=10s;
 
 {{- range .Values.clients }}
-      upstream {{ .name | toString | replace "-" "_" }} {
-        server minecraft-{{ .name }}.minecraft.svc.cluster.local:{{ .port }};
+      upstream {{ .client | toString | replace "-" "_" }} {
+        server minecraft-{{ .client }}.minecraft.svc.cluster.local:{{ .port }};
       }
 
       server {
         listen {{ .port }};
-        proxy_pass {{ .name | toString | replace "-" "_" }};
+        proxy_pass {{ .client | toString | replace "-" "_" }};
       }
 {{- end }}
     }
