@@ -17,7 +17,9 @@ spec:
         - name: nginx
           image: nginx:1.25
           ports:
-            - containerPort: 30500
+            {{- range .Values.clients }}
+            - containerPort: {{ .port }}
+            {{- end }}
           volumeMounts:
             - name: nginx-conf
               mountPath: /etc/nginx/nginx.conf
