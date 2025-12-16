@@ -14,7 +14,7 @@ data:
       resolver kube-dns.kube-system.svc.cluster.local valid=10s;
 
       upstream cliente-945b3565-manoel {
-        server minecraft-cliente-945b3565-manoel.minecraft.svc.cluster.local:25565;
+        server minecraft-cliente-945b3565-manoel.minecraft.svc.cluster.local:30500;
       }
 
       server {
