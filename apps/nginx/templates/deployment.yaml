@@ -13,15 +13,6 @@ spec:
       labels:
         app: nginx-tcp
     spec:
-      nodeSelector:
-        nodepool: pool-game-minecraft
-        
-      tolerations:
-        - key: "dedicated"
-          operator: "Equal"
-          value: "pool-game-minecraft"
-          effect: "NoSchedule"
-
       containers:
         - name: nginx
           image: nginx:1.25
