@@ -1,2 +1,6 @@
 - client: cliente-945b3565-manoel
   port: "30500"
+- client: cliente-945b3565-robert
+  port: "30501"
+- client: cliente-945b3565-raimundo
+  port: "30502"
