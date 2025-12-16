@@ -7,7 +7,9 @@ spec:
   selector:
     app: nginx-tcp
   ports:
-    - name: cliente-945b3565-manoel
-      port: 30500
-      targetPort: 30500
+{{- range .Values.clients }}
+    - name: {{ .name }}
+      port: {{ .port }}
+      targetPort: {{ .port }}
       protocol: TCP
+{{- end }}

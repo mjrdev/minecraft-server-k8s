@@ -13,12 +13,14 @@ data:
     stream {
       resolver kube-dns.kube-system.svc.cluster.local valid=10s;
 
-      upstream cliente-945b3565-manoel {
-        server minecraft-cliente-945b3565-manoel.minecraft.svc.cluster.local:30500;
+{{- range .Values.clients }}
+      upstream {{ .name | replace "-" "_" }} {
+        server minecraft-{{ .name }}.minecraft.svc.cluster.local:{{ .port }};
       }
 
       server {
-        listen 30500;
-        proxy_pass cliente-945b3565-manoel;
+        listen {{ .port }};
+        proxy_pass {{ .name | replace "-" "_" }};
       }
+{{- end }}
     }
