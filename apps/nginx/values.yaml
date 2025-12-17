@@ -14,3 +14,6 @@ clients:
   - client: cliente-945b3565-wendel
     port: "30504"
     port2: "30004"
+  - client: cliente-945b3565-ana
+    port: "30504"
+    port2: "30004"
