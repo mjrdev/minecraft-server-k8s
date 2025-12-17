@@ -15,5 +15,5 @@ clients:
     port: "30504"
     port2: "30004"
   - client: cliente-945b3565-ana
-    port: "30504"
-    port2: "30004"
+    port: "30505"
+    port2: "30005"
