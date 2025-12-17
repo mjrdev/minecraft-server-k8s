@@ -23,7 +23,7 @@ spec:
       tolerations:
         - key: "dedicated"
           operator: "Equal"
-          value: "pool-game-minecraft"
+          value: "minecraft"
           effect: "NoSchedule"
       containers:
         - name: minecraft-server
