@@ -18,7 +18,7 @@ spec:
         client: {{ .Values.client.name }}
     spec:
       nodeSelector:
-        nodepool: pool-games-minecraft
+        doks.digitalocean.com/node-pool: pool-games-minecraft
         
       tolerations:
         - key: "dedicated"
