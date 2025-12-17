@@ -1,1 +1,2 @@
 image: juniorgomesdev/mcpaper:1.21.10
+imageBedrock: itzg/minecraft-bedrock-server:latest

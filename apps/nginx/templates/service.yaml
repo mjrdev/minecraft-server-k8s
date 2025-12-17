@@ -12,4 +12,8 @@ spec:
       port: {{ .port | int }}
       targetPort: {{ .port | int }}
       protocol: TCP
+    - name: {{ .client | lower | replace "_" "-" }}
+      port: {{ .port2 | int }}
+      targetPort: {{ .port2 | int }}
+      protocol: UDP
 {{- end }}

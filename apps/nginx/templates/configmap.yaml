@@ -18,9 +18,18 @@ data:
         server minecraft-{{ .client }}.minecraft.svc.cluster.local:{{ .port }};
       }
 
+      upstream {{ .client | toString | replace "-" "_" }}2 {
+        server minecraft-{{ .client }}.minecraft.svc.cluster.local:{{ .port2 }};
+      }
+
       server {
         listen {{ .port }};
         proxy_pass {{ .client | toString | replace "-" "_" }};
+      }
+
+      server {
+        listen {{ .port2 }};
+        proxy_pass {{ .client | toString | replace "-" "_" }}2;
       }
 {{- end }}
     }

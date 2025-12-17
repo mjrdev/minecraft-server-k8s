@@ -24,6 +24,7 @@ spec:
             client:
               name: {{client}}
               port: {{port}}
+              port2: {{port2}}
       destination:
         server: https://kubernetes.default.svc
         namespace: minecraft

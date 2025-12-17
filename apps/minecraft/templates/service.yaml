@@ -5,8 +5,13 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-    - port: {{ .Values.client.port }}
+    - name: minecraft-java
+      port: {{ .Values.client.port }}
       targetPort: 25565
+    - name: minecraft-bedrock
+      port: {{ .Values.client.port2 }}
+      targetPort: 19132
+      protocol: UDP
   selector:
     app: minecraft-server
     client: {{ .Values.client.name }}

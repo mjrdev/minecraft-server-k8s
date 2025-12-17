@@ -28,15 +28,19 @@ spec:
       containers:
         - name: minecraft-server
           image: {{ .Values.image }}
+          env:
+            - name: EULA
+              value: "TRUE"
           resources:
             requests:
               memory: "512Mi"
               cpu: "200m"
             limits:
-              memory: "3Gi"
-              cpu: "2"
+              memory: "2Gi"
+              cpu: "1500m"
           ports:
             - containerPort: 25565
+            - containerPort: 19132
           readinessProbe:
             tcpSocket:
               port: 25565
