@@ -17,3 +17,15 @@ clients:
   - client: cliente-945b3565-ana
     port: "30505"
     port2: "30005"
+  - client: cliente-joao
+    port: "30506"
+    port2: "30006"
+  - client: cliente-beatriz
+    port: "30507"
+    port2: "30007"
+  - client: cliente-carlos
+    port: "30508"
+    port2: "30008"
+  - client: cliente-fernando
+    port: "30509"
+    port2: "30009"
