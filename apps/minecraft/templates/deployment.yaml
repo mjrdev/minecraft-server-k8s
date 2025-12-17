@@ -27,7 +27,7 @@ spec:
           effect: "NoSchedule"
       containers:
         - name: minecraft-server
-          image: {{ .Values.image }}
+          image: {{ .Values.imageBedrock }}
           env:
             - name: EULA
               value: "TRUE"
