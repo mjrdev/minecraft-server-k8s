@@ -41,8 +41,8 @@ spec:
           ports:
             - containerPort: 25565
             - containerPort: 19132
-          readinessProbe:
-            tcpSocket:
-              port: 25565
-            initialDelaySeconds: 115
-            periodSeconds: 5
+          # readinessProbe:
+          #   tcpSocket:
+          #     port: 25565
+          #   initialDelaySeconds: 115
+          #   periodSeconds: 5
