@@ -1,20 +1,20 @@
 clients:
-  - client: cliente-945b3565-manoel
+  - client: cliente-manoel
     port: "30500"
     port2: "30000"
-  - client: cliente-945b3565-robert
+  - client: cliente-robert
     port: "30501"
     port2: "30001"
-  - client: cliente-945b3565-maria
+  - client: cliente-maria
     port: "30502"
     port2: "30002"
-  - client: cliente-945b3565-luis
+  - client: cliente-luis
     port: "30503"
     port2: "30003"
-  - client: cliente-945b3565-wendel
+  - client: cliente-wendel
     port: "30504"
     port2: "30004"
-  - client: cliente-945b3565-ana
+  - client: cliente-ana
     port: "30505"
     port2: "30005"
   - client: cliente-joao
